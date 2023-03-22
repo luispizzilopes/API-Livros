@@ -8,6 +8,5 @@ namespace ApiLivros.Context
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Livro> Livros { get; set; }
-        public DbSet<ListaDesejo> ListaDesejos { get; set; }
     }
 }
