@@ -1,5 +1,4 @@
-﻿using ApiLivros.Enums;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ApiLivros.Models
 {
@@ -19,8 +18,5 @@ namespace ApiLivros.Models
         [Required]
         [StringLength(500)]
         public string? Descricao { get; set; }
-        public DateTime DataLancamento { get; set; }
-
-        public Status Status { get; set; }
     }
 }

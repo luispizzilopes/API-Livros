@@ -17,7 +17,9 @@ namespace ApiLivros
 
             string SqlConnetion = builder.Configuration.GetConnectionString("StringConexao");
             builder.Services.AddDbContext<AppDbContext>(options =>
-                options.UseMySql(SqlConnetion, ServerVersion.AutoDetect(SqlConnetion))); 
+                options.UseMySql(SqlConnetion, ServerVersion.AutoDetect(SqlConnetion)));
+
+            builder.Services.AddCors(); 
 
             var app = builder.Build();
 
@@ -27,6 +29,13 @@ namespace ApiLivros
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCors(c =>
+            {
+                c.AllowAnyMethod();
+                c.AllowAnyOrigin();
+                c.AllowAnyHeader();
+            });
 
             app.UseHttpsRedirection();
 

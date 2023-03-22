@@ -18,6 +18,5 @@ namespace ApiLivros.Models
         [Required]
         [StringLength(500)]
         public string? Descricao { get; set; }
-        public DateTime DataLancamento { get; set; }
     }
 }
